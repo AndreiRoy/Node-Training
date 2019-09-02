@@ -8,6 +8,8 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+
+const port = process.env.PORT || 3000
 //__dirname with this I obtain tha route at proyect level
 //with join I can add something to the route in order to run a specific file in a folder
 
@@ -89,6 +91,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
